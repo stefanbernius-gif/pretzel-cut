@@ -2528,8 +2528,8 @@ function loop(ts){
   }
 
   if(phase==='aiming'){
-    // Pivot tracking: mouse sits above the bottom 1/4 of blade (toward handle)
-    const pivotOffset = 84; // px along blade axis toward handle end
+    // Pivot tracking: touch/mouse sits at the middle of the wooden handle
+    const pivotOffset = 233; // px along blade axis: len/2 + hLen/2 = 168 + 65
     const pivotX = targetX + Math.cos(knifeAngle) * pivotOffset;
     const pivotY = targetY + Math.sin(knifeAngle) * pivotOffset;
     knifeX+=(pivotX-knifeX)*.18*dt; knifeY+=(pivotY-knifeY)*.18*dt;
