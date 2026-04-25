@@ -285,11 +285,11 @@ body { cursor: none !important; }
 <div id="lead-modal">
   <div id="lead-box">
     <h2>🏆 Enter the Prize Draw</h2>
-    <div class="lead-sub">Submit your score for a chance to win the Oktoberfest 2026 trip for two to Munich!</div>
+    <div class="lead-sub">Top 10 players are entered into a draw for a <strong>free 360° Digital Marketing Audit</strong> — worth thousands in monthly revenue. Submit your score to qualify.</div>
     <input type="email" id="lead-email" placeholder="your@email.com" autocomplete="email">
     <div id="lead-gdpr-row">
       <input type="checkbox" id="lead-gdpr">
-      <label for="lead-gdpr">I agree to be contacted by Bernius Consulting about this prize draw. <a href="https://www.berniusconsulting.com" target="_blank" style="color:#c8a060;">Privacy policy</a></label>
+      <label for="lead-gdpr">I agree to be contacted by Bernius Consulting about this draw and their digital services. <a href="https://www.berniusconsulting.com" target="_blank" style="color:#c8a060;">Privacy policy</a></label>
     </div>
     <button class="btn" id="btn-lead-submit">Submit my score ✈️</button>
     <div id="lead-status"></div>
@@ -301,10 +301,10 @@ body { cursor: none !important; }
 <div id="share-modal">
   <div id="share-box">
     <button id="btn-close-modal">✕</button>
-    <h2>✈️ Win Oktoberfest 2026!</h2>
-    <div class="prize-sub">Share your results &amp; enter the draw — you &amp; a friend could win a trip to Munich for two! 🍺</div>
+    <h2>🏆 Win a Free Marketing Audit!</h2>
+    <div class="prize-sub">Share your results &amp; enter the draw — one of the top 10 players wins a <strong>free 360° Digital Marketing Audit</strong> by Bernius Consulting! 🍺</div>
     <div id="modal-attempts" style="margin:14px 0; text-align:left; background:rgba(255,255,255,0.05); border-radius:10px; padding:12px 16px;"></div>
-    <p style="color:#c8a060; font-size:.8rem; line-height:1.5; margin-bottom:16px;">The best daily cuts win a travel package to Oktoberfest 2026 in Munich for two!</p>
+    <p style="color:#c8a060; font-size:.8rem; line-height:1.5; margin-bottom:16px;">Top 10 players are entered into a draw for a free 360° Digital Marketing Audit — worth thousands in monthly revenue.</p>
     <textarea id="share-text" rows="5" readonly=""></textarea>
     <div class="share-btns">
       <button class="share-btn" id="btn-copy">📋 Copy</button>
@@ -2028,7 +2028,7 @@ function buildShareText(){
   });
   const bestScore = attempts.filter(Number.isFinite).length ? Math.max(...attempts.filter(Number.isFinite)) : 0;
   const streakStr = s.streak > 1 ? `🔥 ${s.streak}-day streak` : '';
-  return `🥨 The Pretzel Cut #${dayNum} — ${dateStr}\n${nameStr} results:\n${lines.join('\n')}\nBest: ${bestScore.toFixed(2)}% ${streakStr}\n\nCan you beat it? 🍺✈️ Best cuts win Oktoberfest 2026 for two!\n👉 www.berniusconsulting.com`;
+  return `🥨 The Pretzel Cut #${dayNum} — ${dateStr}\n${nameStr} results:\n${lines.join('\n')}\nBest: ${bestScore.toFixed(2)}% ${streakStr}\n\nCan you beat it? 🏆 Top 10 players win a free 360° Marketing Audit by Bernius Consulting!\n👉 www.berniusconsulting.com`;
 }
 
 // ─── Game UI Controller ───────────────────────────────────────────────────────
