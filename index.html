@@ -1332,7 +1332,7 @@ function drawScorePanels(ts){
       ctx.fillStyle = 'rgba(255,255,240,0.95)';
       ctx.shadowColor = 'rgba(255,255,220,0.4)';
       ctx.shadowBlur = 4;
-      ctx.fillText(`${score.toFixed(1)}%`, cx, py + 34);
+      ctx.fillText(`${score.toFixed(2)}%`, cx, py + 34);
     }
     ctx.restore();
   }
@@ -1827,7 +1827,7 @@ function drawResultHUD(ts){
     ctx.font='bold 62px Georgia';
     const scoreColor=stars>=3?'#50e870':stars===2?'#e8c040':stars===1?'#f07830':'#e04030';
     ctx.fillStyle=scoreColor; ctx.shadowColor=scoreColor; ctx.shadowBlur=35;
-    ctx.fillText(`${balance.toFixed(1)}%`,W/2,py+108);
+    ctx.fillText(`${balance.toFixed(2)}%`,W/2,py+108);
     ctx.shadowBlur=0;
 
     const sa=Math.min(starAnim,1);
@@ -2024,11 +2024,11 @@ function buildShareText(){
     const sc = attempts[i];
     if(sc === undefined) return `${l}: —`;
     const stars = getStars(1 - sc/100);
-    return `${l}: ${sc.toFixed(1)}% ${'★'.repeat(stars)+'☆'.repeat(3-stars)}`;
+    return `${l}: ${sc.toFixed(2)}% ${'★'.repeat(stars)+'☆'.repeat(3-stars)}`;
   });
   const bestScore = attempts.filter(Number.isFinite).length ? Math.max(...attempts.filter(Number.isFinite)) : 0;
   const streakStr = s.streak > 1 ? `🔥 ${s.streak}-day streak` : '';
-  return `🥨 The Pretzel Cut #${dayNum} — ${dateStr}\n${nameStr} results:\n${lines.join('\n')}\nBest: ${bestScore.toFixed(1)}% ${streakStr}\n\nCan you beat it? 🍺✈️ Best cuts win Oktoberfest 2026 for two!\n👉 www.berniusconsulting.com`;
+  return `🥨 The Pretzel Cut #${dayNum} — ${dateStr}\n${nameStr} results:\n${lines.join('\n')}\nBest: ${bestScore.toFixed(2)}% ${streakStr}\n\nCan you beat it? 🍺✈️ Best cuts win Oktoberfest 2026 for two!\n👉 www.berniusconsulting.com`;
 }
 
 // ─── Game UI Controller ───────────────────────────────────────────────────────
@@ -2150,7 +2150,7 @@ document.getElementById('btn-share').addEventListener('click',()=>{
     const color = score !== undefined ? (stars>=3?'#50e870':stars===2?'#e8c040':stars===1?'#f07830':'#e04030') : 'rgba(255,255,255,0.3)';
     return `<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;${isBest?'font-weight:bold;':'opacity:0.75;'}">
       <span style="color:#c8a060;font-size:.85rem;">${label}</span>
-      <span style="color:${color};font-size:${isBest?'1.1rem':'.9rem'};">${score !== undefined ? score.toFixed(1)+'%' : '—'} ${starStr}</span>
+      <span style="color:${color};font-size:${isBest?'1.1rem':'.9rem'};">${score !== undefined ? score.toFixed(2)+'%' : '—'} ${starStr}</span>
     </div>`;
   }).join('<hr style="border:none;border-top:1px solid rgba(180,130,50,.2);margin:3px 0;">');
 
@@ -2356,7 +2356,7 @@ function generateCertificate() {
   const scoreColor = stars>=3?'#1a8030':stars===2?'#8a6010':'#802010';
   c.font = 'bold 96px Georgia'; c.fillStyle = scoreColor;
   c.shadowColor='rgba(0,0,0,0.2)'; c.shadowBlur=12;
-  c.fillText(`${bestScore.toFixed(1)}%`, rx+300, ry+280);
+  c.fillText(`${bestScore.toFixed(2)}%`, rx+300, ry+280);
   c.shadowBlur=0;
 
   // Stars
