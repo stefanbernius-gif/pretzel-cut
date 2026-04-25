@@ -295,9 +295,9 @@ body { cursor: none !important; }
 </div>
 <div id="hint">Mouse to position · ← → to rotate · Click or SPACE to cut</div>
 
-<div id="touch-controls" style="display:none; gap:16px; margin-top:12px; justify-content:center;">
-  <button class="btn" id="btn-rotate-left" style="padding:12px 28px; font-size:1.4rem;">◁</button>
-  <button class="btn" id="btn-rotate-right" style="padding:12px 28px; font-size:1.4rem;">▷</button>
+<div id="touch-controls" style="display:none; gap:10px; margin-top:8px; justify-content:center;">
+  <button class="btn" id="btn-rotate-left" style="padding:6px 16px; font-size:.85rem; background:linear-gradient(135deg,#c8960a,#e7c040); color:#1a0d00; border:none; min-width:0; width:80px;">◁</button>
+  <button class="btn" id="btn-rotate-right" style="padding:6px 16px; font-size:.85rem; background:linear-gradient(135deg,#c8960a,#e7c040); color:#1a0d00; border:none; min-width:0; width:80px;">▷</button>
 </div>
 
 
@@ -2528,8 +2528,8 @@ function loop(ts){
   }
 
   if(phase==='aiming'){
-    // Pivot tracking: touch/mouse sits at the middle of the wooden handle
-    const pivotOffset = 233; // px along blade axis: len/2 + hLen/2 = 168 + 65
+    // Pivot tracking: touch/mouse sits near the end of the wooden handle
+    const pivotOffset = 275; // px along blade axis: near handle end (len/2 + hLen = 298)
     const pivotX = targetX + Math.cos(knifeAngle) * pivotOffset;
     const pivotY = targetY + Math.sin(knifeAngle) * pivotOffset;
     knifeX+=(pivotX-knifeX)*.18*dt; knifeY+=(pivotY-knifeY)*.18*dt;
